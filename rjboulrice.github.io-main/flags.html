@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Boulrice</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function checkFlags() {
+            const correctFlags = ["FLAG{hidden_flag_1}", "FLAG{hidden_flag_2}", "FLAG{hidden_flag_3}", "FLAG{hidden_flag_4}"];
+            let userFlags = [];
+            for (let i = 1; i <= 4; i++) {
+                userFlags.push(document.getElementById(`flag${i}`).value);
+            }
+            let correctCount = 0;
+            for (let i = 0; i < 4; i++) {
+                if (userFlags[i] === correctFlags[i]) {
+                    correctCount++;
+                }
+            }
+            alert(`You got ${correctCount} out of 4 flags correct.`);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Ryan Boulrice</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="flags.html">Enter Flags</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="description">
+            <h2>Flag Locations</h2>
+            <p>1. Flag 1. </p>
+            <p>2. Flag 2.</p>
+            <p>3. Flag 3.</p>
+            <p>4. Flag 4 </p>
+        </section>
+        <section class="contact">
+            <h2>Enter the Flags Below:</h2>
+            <ul>
+                <li>Flag 1: <input type="text" id="flag1"></li>
+                <li>Flag 2: <input type="text" id="flag2"></li>
+                <li>Flag 3: <input type="text" id="flag3"></li>
+                <li>Flag 4: <input type="text" id="flag4"></li>
+            </ul>
+            <button onclick="checkFlags()">Submit</button>
+        </section>
+    </div>
+    <footer>
+        <p>&copy;.</p>
+    </footer>
+</body>
+</html>
